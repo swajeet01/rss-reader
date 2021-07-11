@@ -4,19 +4,22 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class ArgsParse {
+class ArgsParse {
 
     private static final long DEFAULT_DELAY = 2500;
     private static final long MIN_DELAY = 2500;
     private static final String DEFAULT_URL = "http://feeds.bbci.co.uk/news/rss.xml";
 
     protected static class Args {
+
         final long delay;
         final String url;
-        public Args(long delay, String url) {
+
+        Args(long delay, String url) {
             this.delay = delay;
             this.url = url;
         }
+
         public Args() {
             this(DEFAULT_DELAY, DEFAULT_URL);
         }
@@ -27,7 +30,7 @@ public class ArgsParse {
         }
     }
 
-    public static Args parse(String[] args) {
+    static Args parse(String[] args) {
         Scanner scanner = new Scanner(String.join(" " /* space */ , args));
         long delay = DEFAULT_DELAY;
         String url = DEFAULT_URL;
