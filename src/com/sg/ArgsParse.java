@@ -7,7 +7,7 @@ import java.util.Scanner;
 class ArgsParse {
 
     private static final long DEFAULT_DELAY = 2500;
-    private static final long MIN_DELAY = 2500;
+    private static final long MIN_DELAY = 500;
     private static final String DEFAULT_URL = "http://feeds.bbci.co.uk/news/rss.xml";
 
     protected static class Args {
