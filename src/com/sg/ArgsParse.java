@@ -54,7 +54,7 @@ class ArgsParse {
                         try {
                             url = scanner.next();
                         } catch (NoSuchElementException e) {
-                            System.err.println("No value specified for '-d'");
+                            System.err.println("No value specified for '-u'");
                         }
                         break;
                     default:

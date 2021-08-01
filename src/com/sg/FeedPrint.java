@@ -5,8 +5,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-public class FeedPrint {
-    public static void printFeeds(Document document, long delay) throws InterruptedException {
+class FeedPrint {
+    static void printFeeds(Document document, long delay) throws InterruptedException {
         System.out.println("Feeds:");
         NodeList itemNodes = document.getElementsByTagName("item");
         for (int i = 0; i < itemNodes.getLength(); i++) {
@@ -29,7 +29,7 @@ public class FeedPrint {
         }
     }
 
-    public static void printChannelInfo(Document document) {
+    static void printChannelInfo(Document document) {
         Node channelNode = document.getElementsByTagName("channel").item(0);
         if (channelNode.getNodeType() == Node.ELEMENT_NODE) {
             Element channelElement = (Element) channelNode;

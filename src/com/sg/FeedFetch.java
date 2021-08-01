@@ -10,8 +10,8 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class FeedFetch {
-    public static Document getDocument(String feedUrl) {
+class FeedFetch {
+    static Document getDocument(String feedUrl) {
         try {
             URL url = new URL(feedUrl);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
