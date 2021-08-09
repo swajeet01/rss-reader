@@ -14,15 +14,9 @@ class FeedPrint {
             if (itemNode.getNodeType() == Node.ELEMENT_NODE) {
                 Element newsElement = (Element) itemNode;
                 System.out.println();
-                System.out.println(
-                        "title: " + getTextContent(newsElement, "title")
-                );
-                System.out.println(
-                        "description: " + getTextContent(newsElement, "description")
-                );
-                System.out.println(
-                        "link: " + getTextContent(newsElement, "link")
-                );
+                printFormatted("title", getTextContent(newsElement, "title"));
+                printFormatted("description", getTextContent(newsElement, "description"));
+                printFormatted("link", getTextContent(newsElement, "link"));
                 System.out.println();
             }
             Thread.sleep(delay);
@@ -30,27 +24,25 @@ class FeedPrint {
     }
 
     static void printChannelInfo(Document document) {
+        System.out.println("Channel Info:");
         Node channelNode = document.getElementsByTagName("channel").item(0);
         if (channelNode.getNodeType() == Node.ELEMENT_NODE) {
             Element channelElement = (Element) channelNode;
             System.out.println();
-            System.out.println(
-                    "channel title: " + getTextContent(channelElement, "title")
-            );
-            System.out.println(
-                    "link: " + getTextContent(channelElement, "link")
-            );
-            System.out.println(
-                    "description: " + getTextContent(channelElement, "description")
-            );
-            System.out.println(
-                    "language: " + getTextContent(channelElement, "language")
-            );
+            printFormatted("channel title", getTextContent(channelElement, "title"));
+            printFormatted("link", getTextContent(channelElement, "link"));
+            printFormatted("description", getTextContent(channelElement, "description"));
+            printFormatted("language", getTextContent(channelElement, "language"));
             System.out.println();
         }
     }
 
     private static String getTextContent(Element e, String tagName) {
-        return e.getElementsByTagName(tagName).item(0).getTextContent();
+        return e.getElementsByTagName(tagName).item(0).getTextContent().trim();
     }
+
+    private static void printFormatted(String tag, String content) {
+        System.out.printf("%-15s: %s%n", tag, content);
+    }
+
 }

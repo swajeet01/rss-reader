@@ -10,5 +10,6 @@ public class Main {
         try {
             reader.join();
         } catch (InterruptedException ignore) {}
+        System.out.println("You are all caught up");
     }
 }

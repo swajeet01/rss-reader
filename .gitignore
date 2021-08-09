@@ -2,4 +2,4 @@ out/
 *.class
 *.jar
 src/META-INF/
-.idea/artifacts/News_jar.xml
+.idea/artifacts/news_jar.xml
