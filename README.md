@@ -9,7 +9,7 @@ Simple RSS feed reader, written just for fun.
 ```
 $ git clone https://github.com/swajeet01/rss-reader.git
 $ cd rss-reader
-$ mvn install
+$ mvn package
 $ java -cp target/rssreader-0.0.3.jar com.sg.rssreader.Main
 $ # or with options
 $ # java -cp target/rssreader-0.0.3.jar com.sg.rssreader.Main [-d <delay in ms>] [-u <rss feed link>]
