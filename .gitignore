@@ -3,3 +3,4 @@ out/
 *.jar
 src/META-INF/
 .idea/artifacts/news_jar.xml
+/target/
